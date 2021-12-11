@@ -4,6 +4,8 @@ import numpy as np
 from textblob import TextBlob
 from bs4 import BeautifulSoup
 from matplotlib import pyplot
+import os
+
 
 # A simple Function that takes no. of pos and print the graph for it
 def print_graph(count_verbs, count_adj , count_nouns, title):
@@ -84,9 +86,9 @@ def return_web_text(ori_url):
     final_text = text.encode('utf-8')
     return final_text
 # This function takes the list and fill them and also shows the graph
-def show_subdomain_graph(website_text,website_nouns,website_verbs,website_adj):
+def show_subdomain_graph(website_text,website_nouns,website_verbs,website_adj,website):
     counting = 0
-    for final in first_website:
+    for final in website:
         # Here we have access to all the website names
         # Call the function to get the text
         website_text.append(return_web_text(final))
@@ -95,7 +97,7 @@ def show_subdomain_graph(website_text,website_nouns,website_verbs,website_adj):
         website_nouns.append(return_noun_count(blob))
         website_verbs.append(return_verb_count(blob))
         website_adj.append(return_adj_count(blob))
-        print_graph(website_verbs[counting],website_adj[counting],website_nouns[counting],first_website[counting])
+        print_graph(website_verbs[counting],website_adj[counting],website_nouns[counting],website[counting])
         counting = counting + 1
 
 # This function takes an List and return the sum of total in that list
@@ -104,30 +106,18 @@ def count_total(website_data):
     for total in website_data:
         sum = sum + total
     return sum
+
+
 #####################################################
 ## *************** Main Function Calling ********* ##
 ######################################################
-first_website = ["http://nu.edu.pk/","http://isb.nu.edu.pk/","http://khi.nu.edu.pk/","http://lhr.nu.edu.pk/","http://pwr.nu.edu.pk/"]
-# Calling the function to go and get the web data
-############
-first_website_text = [] # Contains the content of the website 
-first_website_nouns = [] # Contains the number of nouns in website
-first_website_verbs = []  # Contains the verbs of the website
-first_website_adj = []  # Contains the adjective of the website
-################# Go and show the Graph with Subdomains ################
-show_subdomain_graph(first_website_text,first_website_nouns,first_website_verbs,first_website_adj)
-################ Go and count the total number of Parts of speech in doamin ########
-first_website_total = []
-# 0 index contains the total number of Nouns
-# 1 index contains total number of Verbs
-# 2 Index contains total number of Ajection
-first_website_total.append(count_total(first_website_nouns))
-first_website_total.append(count_total(first_website_verbs))
-first_website_total.append(count_total(first_website_adj))
-################ Show the Final Graph of the Website ###############3
-print_graph(first_website_total[1],first_website_total[2],first_website_total[0],"Total For this Domain")
 
+# Run for website 1st
+#os.system('py website1.py')
+#os.system('py website2.py')
+#execfile('file.py')
 
+#os.system('py website3.py')
 """
 final_text = []
 final_text[0] = return_web_text(ori_url[0])
