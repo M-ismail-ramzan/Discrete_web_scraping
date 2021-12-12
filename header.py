@@ -27,7 +27,9 @@ def create_a_maximum_lists(pos_list, list_to_be_filled_with_max):
     pos_copy = pos_list
     #list_to_be_filled_with_max = []
     # For Counting of each element in the list
+    
     for each in range(10):
+        max_noun = ""
         max_count = 0
         for noun in pos_copy:
             #print("Count of " + str(noun) + " is " + str(pos_copy.count(noun)))

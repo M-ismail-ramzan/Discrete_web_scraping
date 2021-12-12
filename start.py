@@ -2,8 +2,8 @@
 #import website2
 #import website3
 from website1 import *
-#from website2 import *
-#from website3 import *
+from website2 import *
+from website3 import *
 #Now i need access to the data of the website...
 #print (first_website_total[0])
 from matplotlib import pyplot
@@ -16,10 +16,20 @@ import numpy as np
 # 2 Index contains total number of Ajection
 
 # THIS Function takes 3 values and show the Graph with label for comparison
-print("Finally")
+print("THE MAXIMUM OCCURANCES OF THE FIRST WEBSITE")
 print(first_website_max_nouns_list)
 print(first_website_max_adjective_list)
 print(first_website_max_verbs_list)
+
+print("THE MAXIMUM OCCURANCES OF THE second WEBSITE")
+print(second_website_max_nouns_list)
+print(second_website_max_adjective_list)
+print(second_website_max_verbs_list)
+
+print("THE MAXIMUM OCCURANCES OF THE third WEBSITE")
+print(third_website_max_nouns_list)
+print(third_website_max_adjective_list)
+print(third_website_max_verbs_list)
 """
 def comparison_graph_display(first_pof,second_pof,third_pof,labels):
     X = ["FAST","NUST","LUMS"]
