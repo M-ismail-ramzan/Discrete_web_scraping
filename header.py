@@ -4,7 +4,7 @@ import numpy as np
 from textblob import TextBlob
 from bs4 import BeautifulSoup
 from matplotlib import pyplot
-import os
+
 
 
 # A simple Function that takes no. of pos and print the graph for it
