@@ -47,8 +47,8 @@ def create_a_maximum_lists(pos_list, list_to_be_filled_with_max):
         saved_nouns_inside_list.append(max_count)
         # Now am saving the list into another list
         list_to_be_filled_with_max.append(saved_nouns_inside_list)
-        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-        print(list_to_be_filled_with_max)
+        #print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+        #print(list_to_be_filled_with_max)
         pos_copy = list(filter((max_noun).__ne__, pos_copy))
     return list_to_be_filled_with_max
     # print("######################################################")
@@ -60,6 +60,7 @@ def create_a_maximum_lists(pos_list, list_to_be_filled_with_max):
 def return_noun_count(blob, max_nouns_list):
     nouns = [n for n, t in blob.tags if (
         t == 'NN' or t == 'NNS' or t == 'NNP' or t == 'NNPS')]
+    print("Nouns In the Website")
     print(nouns)
     create_a_maximum_lists(nouns, max_nouns_list)
 
@@ -75,6 +76,7 @@ def return_noun_count(blob, max_nouns_list):
 def return_verb_count(blob, max_verbs_list):
     verbs = [n for n, t in blob.tags if (
         t == 'VB' or t == 'VBD' or t == 'VBG' or t == 'VBN' or t == 'VBP' or t == 'VBN' or t == 'VBZ')]
+    print("Verbs In the Website")
     print(verbs)
     create_a_maximum_lists(verbs, max_verbs_list)
     count_verbs = 0
@@ -88,6 +90,7 @@ def return_verb_count(blob, max_verbs_list):
 def return_adj_count(blob, max_adj_list):
     adjectives = [n for n, t in blob.tags if (
         t == 'JJ' or t == 'JJR' or t == 'JJS')]
+    print("Adjectives In the Website")
     print(adjectives)
     create_a_maximum_lists(adjectives, max_adj_list)
     count_adj = 0
@@ -129,6 +132,7 @@ def return_web_text(ori_url):
 
     # Remove the empty lines
     text = ' ' . join(chunk for chunk in pieces if chunk)
+    print("Scrapted Data from the Website..")
     print(text.encode('utf-8'))
     final_text = text.encode('utf-8')
     return final_text

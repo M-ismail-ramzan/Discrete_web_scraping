@@ -3,8 +3,8 @@
 #import website3
 import networkx as nx
 from website1 import *
-#from website2 import *
-#from website3 import *
+from website2 import *
+from website3 import *
 #Now i need access to the data of the website...
 #print (first_website_total[0])
 from matplotlib import pyplot
@@ -35,12 +35,6 @@ def top_10_noun_extrator(filled_list, empty_list_to_be_filled):
             empty_list_to_be_filled.append(each)
             count = count+1
     print(empty_list_to_be_filled)
-
-# THIS Function takes 3 values and show the Graph with label for comparison
-print("THE MAXIMUM OCCURANCES OF THE FIRST WEBSITE")
-print(first_website_max_nouns_list)
-print(first_website_max_adjective_list)
-print(first_website_max_verbs_list)
 
 top_10_from_graph_list = []
 def show_final_website_graph(website_text,max_nouns_in_website):
@@ -81,51 +75,17 @@ def show_final_website_graph(website_text,max_nouns_in_website):
     sorted(G.degree, key=lambda x: x[1], reverse=True)
     d = list(G.degree)
     print("########### TOP APPEARING IN THE GRAPH #########")
+    tup=Sort_Tuple(d)
+    count=0
     for each in tup:
-    if count == 10:
-        break
-    else:
-        print(each)
-        count=count+1
+        if count == 10:
+            break
+        else:
+            print(each)
+            count=count+1
     #print(d)
     #print(top_10_from_graph_list)
     plt.show()
-
-show_final_website_graph(first_website_text,first_website_max_nouns_list)
-"""
-print("THE MAXIMUM OCCURANCES OF THE second WEBSITE")
-print(second_website_max_nouns_list)
-print(second_website_max_adjective_list)
-print(second_website_max_verbs_list)
-
-comparison_graph_display(first_website_total[0],second_website_total[0],third_website_total[0],"Nouns")
-comparison_graph_display(first_website_total[1],second_website_total[1],third_website_total[1],"Verbs")
-comparison_graph_display(first_website_total[2],second_website_total[2],third_website_total[2],"Adjective")
-
-
-print("THE MAXIMUM OCCURANCES OF THE third WEBSITE")
-print(third_website_max_nouns_list)
-print(third_website_max_adjective_list)
-print(third_website_max_verbs_list)
-
-
-
-first_website_top_10_nouns = []
-top_10_noun_extrator(first_website_max_nouns_list,first_website_top_10_nouns)
-print("TOP 10 Nouns of First Website")
-print(first_website_top_10_nouns)
-
-
-second_website_top_10_nouns = []
-top_10_noun_extrator(second_website_max_nouns_list,second_website_top_10_nouns)
-print("TOP 10 Nouns of Second Website")
-print(second_website_top_10_nouns)
-
-third_website_top_10_nouns = []
-top_10_noun_extrator(third_website_max_nouns_list,third_website_top_10_nouns)
-print("TOP 10 Nouns of third Website")
-print(third_website_top_10_nouns)
-
 def comparison_graph_display(first_pof,second_pof,third_pof,labels):
     X = ["FAST","NUST","LUMS"]
     nouns = [first_pof,second_pof,third_pof]
@@ -138,8 +98,97 @@ def comparison_graph_display(first_pof,second_pof,third_pof,labels):
     pyplot.legend()
     pyplot.show()
 
+
+
+comparison_graph_display(first_website_total[0],second_website_total[0],third_website_total[0],"Nouns")
+comparison_graph_display(first_website_total[1],second_website_total[1],third_website_total[1],"Verbs")
+comparison_graph_display(first_website_total[2],second_website_total[2],third_website_total[2],"Adjective")
+
+# THIS Function takes 3 values and show the Graph with label for comparison
+print("---------------------THE MAXIMUM OCCURANCES OF THE FIRST WEBSITE-------------")
+print("[+]   Maximum Ocurring  Nouns   [+] ")
+print(first_website_max_nouns_list)
+print("[+]   Maximum Ocurring  Adjectives   [+] ")
+print(first_website_max_adjective_list)
+print("[+]   Maximum Ocurring  Verbs   [+] ")
+print(first_website_max_verbs_list)
+
+
+print("------------THE MAXIMUM OCCURANCES OF THE second WEBSITE------------")
+print("[+]   Maximum Ocurring  Nouns   [+] ")
+print(second_website_max_nouns_list)
+print("[+]   Maximum Ocurring  Adjectives   [+] ")
+print(second_website_max_adjective_list)
+print("[+]   Maximum Ocurring  Verbs   [+] ")
+print(second_website_max_verbs_list)
+
+print("----------------THE MAXIMUM OCCURANCES OF THE third WEBSITE-----------------")
+print("[+]   Maximum Ocurring  Nouns   [+] ")
+print(third_website_max_nouns_list)
+print("[+]   Maximum Ocurring  Adjectives   [+] ")
+print(third_website_max_adjective_list)
+print("[+]   Maximum Ocurring  Verbs   [+] ")
+print(third_website_max_verbs_list)
+
+
+################################
+# Displaying for first website
+###################33
+first_website_top_10_nouns = []
+first_website_top_10_verbs = []
+first_website_top_10_adjectives = []
+top_10_noun_extrator(first_website_max_nouns_list,first_website_top_10_nouns)
+top_10_noun_extrator(first_website_max_verbs_list,first_website_top_10_verbs)
+top_10_noun_extrator(first_website_max_adjective_list,first_website_top_10_adjectives)
+print("\nTOP 10 Nouns of First Website\n")
+print(first_website_top_10_nouns)
+
+print("\nTOP 10 Verbs First Website\n")
+print(first_website_top_10_verbs)
+
+print("\nTOP 10 Adjectives First Website\n")
+print(first_website_top_10_adjectives)
+
+################################
+# Displaying for Second website
+###################33
+second_website_top_10_nouns = []
+second_website_top_10_verbs = []
+second_website_top_10_adjectives = []
+top_10_noun_extrator(second_website_max_nouns_list,second_website_top_10_nouns)
+top_10_noun_extrator(second_website_max_verbs_list,second_website_top_10_verbs)
+top_10_noun_extrator(second_website_max_adjective_list,second_website_top_10_adjectives)
+print("\nTOP 10 Nouns of second Website\n")
+print(second_website_top_10_nouns)
+
+print("\nTOP 10 Verbs Second Website\n")
+print(second_website_top_10_verbs)
+
+print("\nTOP 10 Adjectives Second Website\n")
+print(second_website_top_10_adjectives)
+
+################################
+# Displaying for Third website
+###################33
+third_website_top_10_nouns = []
+third_website_top_10_verbs = []
+third_website_top_10_adjectives = []
+top_10_noun_extrator(third_website_max_nouns_list,third_website_top_10_nouns)
+top_10_noun_extrator(third_website_max_verbs_list,third_website_top_10_verbs)
+top_10_noun_extrator(third_website_max_adjective_list,third_website_top_10_adjectives)
+print("\nTOP 10 Nouns of second Website\n")
+print(third_website_top_10_nouns)
+
+print("\nTOP 10 Verbs Second Website\n")
+print(third_website_top_10_verbs)
+
+print("\nTOP 10 Adjectives Second Website\n")
+print(third_website_top_10_adjectives)
+
+
+show_final_website_graph(first_website_text,first_website_max_nouns_list)
+show_final_website_graph(second_website_text,second_website_max_nouns_list)
+show_final_website_graph(third_website_text,third_website_max_nouns_list)
 # 0 index contains the total number of Nouns
 # 1 index contains total number of Verbs
 # 2 Index contains total number of Ajection
-
-"""
