@@ -61,7 +61,7 @@ def return_noun_count(blob, max_nouns_list):
     nouns = [n for n, t in blob.tags if (
         t == 'NN' or t == 'NNS' or t == 'NNP' or t == 'NNPS')]
     print(nouns)
-    max_nouns_list.append(create_a_maximum_lists(nouns, max_nouns_list))
+    create_a_maximum_lists(nouns, max_nouns_list)
 
     # For counting the Total Number of Nouns
     count_nouns = 0
@@ -76,7 +76,7 @@ def return_verb_count(blob, max_verbs_list):
     verbs = [n for n, t in blob.tags if (
         t == 'VB' or t == 'VBD' or t == 'VBG' or t == 'VBN' or t == 'VBP' or t == 'VBN' or t == 'VBZ')]
     print(verbs)
-    max_verbs_list.append(create_a_maximum_lists(verbs, max_verbs_list))
+    create_a_maximum_lists(verbs, max_verbs_list)
     count_verbs = 0
     for verb in verbs:
         count_verbs = count_verbs+1
@@ -89,7 +89,7 @@ def return_adj_count(blob, max_adj_list):
     adjectives = [n for n, t in blob.tags if (
         t == 'JJ' or t == 'JJR' or t == 'JJS')]
     print(adjectives)
-    max_adj_list.append(create_a_maximum_lists(adjectives, max_adj_list))
+    create_a_maximum_lists(adjectives, max_adj_list)
     count_adj = 0
     for adjective in adjectives:
         count_adj = count_adj+1
