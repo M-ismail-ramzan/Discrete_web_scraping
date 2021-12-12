@@ -1,6 +1,6 @@
 from header import *
 
-first_website = ["http://nu.edu.pk/","http://isb.nu.edu.pk/","http://khi.nu.edu.pk/","http://lhr.nu.edu.pk/","http://pwr.nu.edu.pk/"]
+first_website = ["http://nu.edu.pk/","http://nu.edu.pk/Oric","http://khi.nu.edu.pk/","http://lhr.nu.edu.pk/","http://pwr.nu.edu.pk/"]
 # Calling the function to go and get the web data
 ############
 first_website_text = [] # Contains the content of the website 

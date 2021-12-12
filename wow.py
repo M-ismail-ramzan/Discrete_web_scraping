@@ -1,5 +1,7 @@
 noun = "wow.i"
 if not any(value in noun for value in ("+", ".","/","-","$")):
-    print(noun)
+    print(len(noun))
 else:
-    print("wtf")
+    print("haha")
+
+print(len(noun))
