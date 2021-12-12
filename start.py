@@ -1,19 +1,21 @@
 #import website1
 #import website2
 #import website3
+import networkx as nx
 from website1 import *
-from website2 import *
-from website3 import *
+#from website2 import *
+#from website3 import *
 #Now i need access to the data of the website...
 #print (first_website_total[0])
 from matplotlib import pyplot
 import numpy as np
 
-
 # first_website_total,second_website_total & third_website_total
 # 0 index contains the total number of Nouns
 # 1 index contains total number of Verbs
 # 2 Index contains total number of Ajection
+
+
 
 
 #Pass this function 2 list one the filled list and the other to be filled for top 10
@@ -40,6 +42,8 @@ print("TOP 10 Nouns of First Website")
 print(first_website_top_10_nouns)
 
 
+print(first_website_text)
+"""
 print("THE MAXIMUM OCCURANCES OF THE second WEBSITE")
 print(second_website_max_nouns_list)
 print(second_website_max_adjective_list)
@@ -79,3 +83,4 @@ def comparison_graph_display(first_pof,second_pof,third_pof,labels):
 comparison_graph_display(first_website_total[0],second_website_total[0],third_website_total[0],"Nouns")
 comparison_graph_display(first_website_total[1],second_website_total[1],third_website_total[1],"Verbs")
 comparison_graph_display(first_website_total[2],second_website_total[2],third_website_total[2],"Adjective")
+"""
