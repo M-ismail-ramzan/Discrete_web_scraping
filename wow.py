@@ -52,5 +52,18 @@ for sentence in text.sentences:
 pos=nx.spring_layout(G, k=0.99 ,iterations=20,scale=2)
 nx.draw(G,pos,with_labels=True,node_color='skyblue',font_size = 4)
 print(nx.number_connected_components(G))
+sorted(G.degree, key=lambda x: x[1], reverse=True)
+d = list(G.degree)
+print(d)
+
+tup = [('research', 42), ('students', 36), ('program', 34), ('management', 27), ('courses', 24), ('skills', 23), ('knowledge', 22), ('Campus', 21), ('Peshawar', 18), ('degree', 18), ('student', 17), ('Karachi', 16), ('Lahore', 14), ('University', 14), ('Faculty', 13), ('Pakistan', 12), ('Computer', 12), ('Engineering', 12), ('Science', 11), ('Islamabad', 10), ('National', 9), ('campus', 9), ('Electrical', 9), ('Department', 8), ('Batch', 7), ('Civil', 6), ('Sciences', 6), ('Management', 6), ('credit', 5), ('event', 5), ('Vision', 4), ('Student', 3), ('education', 3), ('careers', 3), ('fundamentals', 3), ('School', 3), ('course', 3), ('staff', 3), ('graduate', 3), ('needs', 2), ('university', 2), ('Students', 2), ('level', 2), ('development', 2), ('business', 2), ('Finance', 2)]
+
+count=0
+for each in tup:
+    if count == 10:
+        break
+    else:
+        print(each)
+        count=count+1
 plt.show()
 

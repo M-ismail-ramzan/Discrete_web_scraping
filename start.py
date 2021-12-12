@@ -15,7 +15,13 @@ import matplotlib.pyplot as plt
 # 1 index contains total number of Verbs
 # 2 Index contains total number of Ajection
 
-
+def Sort_Tuple(tup): 
+  
+    # reverse = None (Sorts in Ascending order) 
+    # key is set to sort using second element of 
+    # sublist lambda has been used 
+    tup.sort(key = lambda x: x[1], reverse=True) 
+    return tup 
 
 
 #Pass this function 2 list one the filled list and the other to be filled for top 10
@@ -36,7 +42,7 @@ print(first_website_max_nouns_list)
 print(first_website_max_adjective_list)
 print(first_website_max_verbs_list)
 
-
+top_10_from_graph_list = []
 def show_final_website_graph(website_text,max_nouns_in_website):
     
     other_list_=[]
@@ -71,6 +77,18 @@ def show_final_website_graph(website_text,max_nouns_in_website):
     pos=nx.spring_layout(G, k=0.99 ,iterations=20,scale=2)
     nx.draw(G,pos,with_labels=True,node_color='skyblue',font_size = 4)
     print("Number of Connected Componets is:" + str(nx.number_connected_components(G)))
+
+    sorted(G.degree, key=lambda x: x[1], reverse=True)
+    d = list(G.degree)
+    print("########### TOP APPEARING IN THE GRAPH #########")
+    for each in tup:
+    if count == 10:
+        break
+    else:
+        print(each)
+        count=count+1
+    #print(d)
+    #print(top_10_from_graph_list)
     plt.show()
 
 show_final_website_graph(first_website_text,first_website_max_nouns_list)
